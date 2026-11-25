@@ -1,0 +1,154 @@
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.186.0/examples/jsm/"}}</script>
+<div class="topbar">
+  <div class="tb-in">
+    <button class="logo" id="goHome" type="button" aria-label="Inicio" data-i18n-attr="aria-label:Inicio"><span class="anv"><svg class="i"><use href="#i-scale"/></svg></span><span>Debat<em>IA</em></span></button>
+    <nav class="stepper" id="stepper" aria-label="Pasos" data-i18n-attr="aria-label:Pasos"></nav>
+    <div class="tb-tools"><div class="tb-lang" id="langBox"><select id="selLang" class="tb-sel" aria-label="Idioma" data-i18n-attr="aria-label:Idioma"></select></div><button class="tb-btn" id="btnProg" type="button"><svg class="i"><use href="#i-chart"/></svg><span class="lbl" data-i18n="Progreso">Progreso</span></button><button class="tb-btn" id="btnIA" type="button"><svg class="i"><use href="#i-key"/></svg><span class="lbl" data-i18n="IA">IA</span></button><button class="tb-btn" id="btnHelp" type="button"><svg class="i"><use href="#i-help"/></svg><span class="lbl" data-i18n="Ayuda">Ayuda</span></button></div>
+  </div>
+  <div class="progress"><span id="progBar"></span></div>
+</div>
+
+<main id="app">
+<!-- 0 · INICIO -->
+<section class="screen" data-step="0">
+  <div class="hero">
+    <p class="eyebrow" data-i18n="hero.eyebrow">Entrenamiento de la oratoria y el debate · Universidad Miguel Hernández de Elche</p>
+    <h1 data-i18n="hero.h1">Defiende tu postura y <em>mueve votos</em> frente a un rival que no se rinde</h1>
+    <p class="lede" data-i18n="hero.lede">Debates en directo contra un rival IA con las fases y los tiempos de los Munk Debates. Cien personas sintéticas votan antes y después: gana quien más opiniones consigue cambiar. El código mide tu discurso y comprueba cada cita.</p>
+    <div class="actions"><button class="btn btn-primary btn-big" id="btnStart" type="button"><svg class="i"><use href="#i-play"/></svg><span data-i18n="s.empezar">Preparar un debate</span></button><button class="btn btn-ghost btn-big" id="btnEjemplo" type="button"><svg class="i"><use href="#i-eye"/></svg><span data-i18n="s.ejemplo">Ver un ejemplo</span></button></div>
+    <p class="fa-inicio" id="inicioProj"></p>
+    <div class="fa-autores"><span class="fa-autores-cap" data-i18n="Realizada por">Realizada por</span>
+      <div class="fa-autor"><span class="fa-av" style="--c:#E4572E">FB</span><div><b>Fernando Borrás Rocher</b><small>Universidad Miguel Hernández de Elche</small><a class="fa-orcid" href="https://orcid.org/0000-0002-5519-4573" target="_blank" rel="noopener">ORCID 0000-0002-5519-4573</a></div></div>
+      <p class="fa-idea" data-i18n="s.idea">Inspirada en el formato de los Munk Debates (Toronto), sin relación con su organización. El público sintético reutiliza la población de PanelIA y el avatar 3D, el de AnamnesIA.</p>
+    </div>
+  </div>
+  <h2 class="sec-title" data-i18n="Cómo funciona">Cómo funciona</h2>
+  <div class="journey" style="grid-template-columns:repeat(auto-fit,minmax(180px,1fr))">
+    <div class="jstop" style="--c:#6B4FD8"><span class="jn">1</span><div class="ji"><svg class="i"><use href="#i-sliders"/></svg></div><b data-i18n="s.j1b">Moción y rival</b><span data-i18n="s.j1s">Eliges la moción, tu postura y un rival con su estilo y su nivel.</span></div>
+    <div class="jstop" style="--c:#1F6FB2"><span class="jn">2</span><div class="ji"><svg class="i"><use href="#i-users"/></svg></div><b data-i18n="s.j2b">El público vota</b><span data-i18n="s.j2s">Cien personas sintéticas con perfiles del INE votan la moción antes de empezar.</span></div>
+    <div class="jstop" style="--c:#E4572E"><span class="jn">3</span><div class="ji"><svg class="i"><use href="#i-mic"/></svg></div><b data-i18n="s.j3b">Debates</b><span data-i18n="s.j3s">Apertura, réplica, preguntas del moderador y cierre, cada fase con su tiempo.</span></div>
+    <div class="jstop" style="--c:#0E8C7A"><span class="jn">4</span><div class="ji"><svg class="i"><use href="#i-scale"/></svg></div><b data-i18n="s.j4b">Veredicto Munk</b><span data-i18n="s.j4s">El público vuelve a votar. Gana quien más votos ha movido.</span></div>
+    <div class="jstop" style="--c:#C98200"><span class="jn">5</span><div class="ji"><svg class="i"><use href="#i-doc"/></svg></div><b data-i18n="s.j5b">Informe de oratoria</b><span data-i18n="s.j5s">Métricas calculadas por el código y comentarios con citas literales comprobadas.</span></div>
+  </div>
+  <h2 class="sec-title" data-i18n="Dónde va cada cosa">Dónde va cada cosa</h2>
+  <div class="zonas"><div class="zona l"><h4 data-i18n="Siempre en tu ordenador">Siempre en tu ordenador</h4><ul data-i18n="s.zl">
+<li>Tus debates, tu progreso y tus informes, guardados en este navegador</li><li>Tu clave de IA</li><li>El dictado, la voz del rival y el avatar: los hace el propio navegador, sin enviar audio</li><li>El público, el recuento de votos y las métricas: los calcula el código</li></ul></div>
+    <div class="zona n"><h4 data-i18n="Sale hacia tu proveedor de IA">Sale hacia tu proveedor de IA</h4><ul data-i18n="s.zn">
+<li>La moción, tus intervenciones y las del rival</li><li>Los perfiles del público sintético (sexo, edad, comunidad y estudios), sin datos de personas reales</li><li>Antes del primer envío ves exactamente lo que sale. Tu nombre no se envía.</li></ul></div></div>
+</section>
+
+<!-- 1 · MOCIÓN Y RIVAL -->
+<section class="screen" data-step="1">
+  <header class="sh" style="--c:#6B4FD8"><div class="sh-ico"><svg class="i"><use href="#i-sliders"/></svg></div><div><p class="sh-step" data-i18n="s.paso1">Paso 1 de 5</p><h2 data-i18n="s.prep">La moción y tu rival</h2><p class="sh-lede" data-i18n="s.prep.lede">En un debate Munk se vota una afirmación: un lado la defiende y el otro la rechaza.</p></div></header>
+  <p class="aviso" id="avisoReinicio" hidden></p>
+  <div class="card">
+    <div class="grid2">
+      <div class="field"><label for="sname" data-i18n="s.nombre">Tu nombre</label><input type="text" id="sname" autocomplete="name" placeholder="Ej. Ana García" data-i18n-attr="placeholder:s.nombre.ph"><p class="help" data-i18n="s.nombre.help">Solo encabeza tus informes. No se envía a la IA.</p></div>
+      <div class="field"><label for="selMocion" data-i18n="s.mocion">Moción</label><select id="selMocion"></select><p class="help" data-i18n="s.mocion.help">Elige una del banco o escribe la tuya.</p></div>
+    </div>
+    <div class="field" style="margin-top:12px"><label for="mocionTxt" data-i18n="s.mocion.txt">Texto de la moción</label><textarea id="mocionTxt" rows="2" placeholder="Una afirmación que se pueda defender o rechazar…" data-i18n-attr="placeholder:s.mocion.ph"></textarea><p class="help" data-i18n="s.mocion.tip">Una sola afirmación, discutible y sin «y» que la parta en dos. Ej.: «La semana laboral de cuatro días debería ser la norma».</p></div>
+  </div>
+  <div class="card"><h3 data-i18n="s.lado">Tu postura</h3><div class="db-opts" id="lados" role="radiogroup" aria-label="Tu postura" data-i18n-attr="aria-label:s.lado"></div><p class="help" data-i18n="s.lado.help">En los Munk la postura no siempre es la que uno piensa: defender la contraria es un buen entrenamiento.</p></div>
+  <div class="card"><h3 data-i18n="s.rival">Tu rival</h3><div class="db-rivales" id="rivales" role="radiogroup" aria-label="Tu rival" data-i18n-attr="aria-label:s.rival"></div>
+    <h4 class="db-h4" data-i18n="s.estilo">Estilo</h4><div class="db-opts db-4" id="estilos" role="radiogroup" aria-label="Estilo" data-i18n-attr="aria-label:s.estilo"></div>
+    <h4 class="db-h4" data-i18n="s.nivel">Nivel</h4><div class="db-opts" id="niveles" role="radiogroup" aria-label="Nivel" data-i18n-attr="aria-label:s.nivel"></div></div>
+  <div class="card"><h3 data-i18n="s.formato">Formato y tiempos</h3><div class="db-opts db-2" id="formatos" role="radiogroup" aria-label="Formato y tiempos" data-i18n-attr="aria-label:s.formato"></div><p class="help" data-i18n="s.formato.help">Munk adaptado a 1 contra 1: abre quien defiende la moción y cierra en último lugar; entre medias hay réplicas y dos preguntas del moderador.</p></div>
+  <div class="card">
+    <h3 data-i18n="s.voz">Voz</h3>
+    <label class="fa-chk"><input type="checkbox" id="tSTT"> <span><b data-i18n="s.stt">Dictado</b> — <span data-i18n="s.stt.s">hablas en vez de escribir y el código mide tu ritmo real</span></span></label>
+    <label class="fa-chk" style="margin-top:8px"><input type="checkbox" id="tTTS"> <span><b data-i18n="s.tts">Voz del rival y del moderador</b> — <span data-i18n="s.tts.s">sus intervenciones se leen en voz alta</span></span></label>
+    <label class="fa-chk" style="margin-top:8px"><input type="checkbox" id="tAVA"> <span><b data-i18n="s.ava">Avatar 3D (prototipo)</b> — <span data-i18n="s.ava.s">tu rival aparece en pantalla y mueve los labios cuando habla en voz alta</span></span></label>
+    <p class="help" data-i18n="s.voz.help">Lo hace el propio navegador (Web Speech API): el audio no sale de tu dispositivo. Funciona mejor en Chrome y Edge.</p>
+    <p class="help" data-i18n="s.voz.ios">En iPhone y iPad, el navegador solo habla después de que toques la pantalla al menos una vez, y el dictado no está disponible. Si no se oye, usa el botón 🔊 de cada intervención.</p>
+    <p class="aviso" id="vozNo" hidden data-i18n="s.voz.no">Este navegador no admite dictado. El debate funciona igual escribiendo.</p>
+  </div>
+</section>
+
+<!-- 2 · PÚBLICO Y VOTACIÓN PREVIA -->
+<section class="screen" data-step="2">
+  <header class="sh" style="--c:#1F6FB2"><div class="sh-ico"><svg class="i"><use href="#i-users"/></svg></div><div><p class="sh-step" data-i18n="s.paso2">Paso 2 de 5</p><h2 data-i18n="s.publico">El público y la votación previa</h2><p class="sh-lede" data-i18n="s.publico.lede">Personas sintéticas con perfiles proporcionales a la población adulta de España (INE 2025). Votan la moción antes de oír el debate.</p></div></header>
+  <div class="card">
+    <h3 data-i18n="s.pob">Composición del público</h3>
+    <div class="grid4">
+      <div class="field"><label for="pobN" data-i18n="s.pob.n">Personas</label><input type="number" id="pobN" min="10" max="200" step="10"></div>
+      <div class="field"><label for="pobMin" data-i18n="s.pob.min">Edad mínima</label><input type="number" id="pobMin" min="18" max="105"></div>
+      <div class="field"><label for="pobMax" data-i18n="s.pob.max">Edad máxima</label><input type="number" id="pobMax" min="18" max="105"></div>
+      <div class="field"><label for="pobSem" data-i18n="s.pob.sem">Semilla</label><input type="number" id="pobSem" min="1"></div>
+    </div>
+    <p class="help" data-i18n="s.pob.help">Misma semilla, mismo público. Sexo, edad y comunidad se reparten por cuotas exactas; los estudios dependen de la edad (EPA 2025).</p>
+    <div id="pobResumen"></div>
+  </div>
+  <div class="card">
+    <h3 data-i18n="s.prevoto">Votación previa</h3>
+    <p class="help" id="preCoste"></p>
+    <div class="actions" style="margin-top:6px"><button class="btn btn-primary" id="btnPre" type="button"><svg class="i"><use href="#i-users"/></svg><span data-i18n="s.prevoto.btn">Que vote el público</span></button><button class="btn btn-ghost" id="btnPreStop" type="button" hidden><svg class="i"><use href="#i-x"/></svg><span data-i18n="Detener">Detener</span></button></div>
+    <p class="help" id="preEstado" role="status"></p>
+    <div id="preZona"></div>
+  </div>
+</section>
+
+<!-- 3 · EL DEBATE -->
+<section class="screen" data-step="3">
+  <header class="sh" style="--c:#E4572E"><div class="sh-ico"><svg class="i"><use href="#i-mic"/></svg></div><div><p class="sh-step" data-i18n="s.paso3">Paso 3 de 5</p><h2 data-i18n="s.debate">El debate</h2><p class="sh-lede" id="debMocion"></p></div></header>
+  <div class="db-sala">
+    <div class="card db-chatcard">
+      <div class="db-rivalcab" id="rivalCab"></div>
+      <div class="an-avatar" id="avatarZona" hidden><div class="an-avatar-lienzo" id="avatarLienzo"></div><p class="help" id="avatarEstado" role="status"></p></div>
+      <div class="db-msgs" id="msgs" role="log" aria-live="polite"></div>
+      <div class="db-entrada" id="entrada">
+        <p class="db-turno" id="turnoTxt"></p>
+        <textarea id="cin" rows="5" placeholder="Escribe o dicta tu intervención…" aria-label="Tu intervención" data-i18n-attr="placeholder:s.escribe;aria-label:s.tuinterv"></textarea>
+        <div class="db-entrada-pie">
+          <button class="btn btn-ghost btn-sm db-mic" id="btnMic" type="button" hidden><svg class="i"><use href="#i-mic"/></svg><span id="micTxt">Dictar</span></button>
+          <span class="db-cuenta" id="cuentaTxt"></span>
+          <button class="btn btn-primary btn-sm" id="btnSend" type="button"><svg class="i"><use href="#i-send"/></svg><span data-i18n="s.terminar.int">Terminar mi intervención</span></button>
+        </div>
+      </div>
+      <p class="help" id="estadoChat" role="status"></p>
+    </div>
+    <aside class="db-panel">
+      <div class="card db-reloj" id="reloj"><span class="db-fase" id="relojFase"></span><span class="db-tiempo" id="relojT">0:00</span><small id="relojS"></small><div class="an-barra db-barra"><i id="relojBar"></i></div></div>
+      <div class="card"><h3 class="an-h3" data-i18n="s.orden">Orden del debate</h3><ol class="db-plan" id="plan"></ol></div>
+      <div class="card"><div class="actions" style="margin-top:0"><button class="btn btn-ghost btn-sm" id="btnReinicia" type="button"><svg class="i"><use href="#i-refresh"/></svg><span data-i18n="s.reinicia">Reiniciar el debate</span></button></div></div>
+    </aside>
+  </div>
+</section>
+
+<!-- 4 · VEREDICTO -->
+<section class="screen" data-step="4">
+  <header class="sh" style="--c:#0E8C7A"><div class="sh-ico"><svg class="i"><use href="#i-scale"/></svg></div><div><p class="sh-step" data-i18n="s.paso4">Paso 4 de 5</p><h2 data-i18n="s.veredicto">El veredicto del público</h2><p class="sh-lede" data-i18n="s.veredicto.lede">Regla de los Munk: gana quien más puntos porcentuales gana entre la votación previa y la final. El recuento lo hace el código.</p></div></header>
+  <div class="card" id="postCard">
+    <p class="help" id="postCoste"></p>
+    <div class="actions" style="margin-top:6px"><button class="btn btn-primary" id="btnPost" type="button"><svg class="i"><use href="#i-users"/></svg><span data-i18n="s.postvoto.btn">Votación final del público</span></button><button class="btn btn-ghost" id="btnPostStop" type="button" hidden><svg class="i"><use href="#i-x"/></svg><span data-i18n="Detener">Detener</span></button></div>
+    <p class="help" id="postEstado" role="status"></p>
+  </div>
+  <div id="verZona"></div>
+</section>
+
+<!-- 5 · INFORME DE ORATORIA -->
+<section class="screen" data-step="5">
+  <header class="sh" style="--c:#C98200"><div class="sh-ico"><svg class="i"><use href="#i-doc"/></svg></div><div><p class="sh-step" data-i18n="s.paso5">Paso 5 de 5</p><h2 data-i18n="s.informe">Tu informe de oratoria</h2><p class="sh-lede" data-i18n="s.informe.lede">Las métricas las calcula el código sobre tus palabras. Los comentarios los redacta la IA y cada cita se comprueba contra lo que dijiste. No hay nota: es para mejorar.</p></div></header>
+  <div id="infZona"></div>
+</section>
+
+<!-- 6 · PROGRESO (sección fuera del recorrido) -->
+<section class="screen" data-step="6">
+  <header class="sh" style="--c:#1F6FB2"><div class="sh-ico"><svg class="i"><use href="#i-chart"/></svg></div><div><p class="sh-step" data-i18n="Progreso">Progreso</p><h2 data-i18n="s.progreso">Tus debates</h2><p class="sh-lede" data-i18n="s.progreso.lede">Todos tus debates terminados, guardados solo en este navegador.</p></div></header>
+  <div id="progZona"></div>
+</section>
+</main>
+
+<footer class="fa-foot"><hr><p><b>DebatIA</b> · Fernando Borrás Rocher · Universidad Miguel Hernández de Elche. <span data-i18n="f.pie">Herramienta de entrenamiento: el público es sintético y sus votos no predicen los de un público real. La IA puede equivocarse; los comentarios son orientativos y no sustituyen la evaluación del profesorado. Tus datos se guardan solo en este navegador.</span></p></footer>
+<div class="bottomnav"><div class="bn-in"><button class="btn btn-ghost" id="navBack" type="button"><svg class="i"><use href="#i-left"/></svg><span data-i18n="Atrás">Atrás</span></button><div class="bn-hint" id="navHint"></div><button class="btn btn-primary" id="navNext" type="button"><span id="navNextTxt">Siguiente</span><svg class="i"><use href="#i-right"/></svg></button></div></div>
+
+<div class="modal" id="mIA" role="dialog" aria-modal="true" aria-labelledby="mIAT"><div class="modal-box"><div class="modal-head"><h2 id="mIAT" data-i18n="Inteligencia artificial">Inteligencia artificial</h2><button type="button" data-close data-i18n="Cerrar">Cerrar</button></div><div class="modal-body">
+  <div class="field"><label for="selProv" data-i18n="Proveedor">Proveedor</label><select id="selProv"><option value="openai">OpenAI</option><option value="gemini">Google Gemini</option><option value="anthropic">Anthropic Claude</option></select></div>
+  <div class="field"><label for="apiKey" data-i18n="Tu clave de API">Tu clave de API</label><div class="keyrow"><input type="password" id="apiKey" autocomplete="off"><button class="eye" id="btnEye" type="button" aria-label="Ver" data-i18n-attr="aria-label:Ver"><svg class="i"><use href="#i-eye"/></svg></button></div></div>
+  <div class="field"><label for="selModelo" data-i18n="Modelo">Modelo</label><select id="selModelo"></select><input type="text" id="modelo" hidden autocomplete="off" placeholder="Escribe el nombre exacto del modelo" data-i18n-attr="placeholder:Escribe el nombre exacto del modelo" style="margin-top:8px"></div>
+  <div class="actions"><button class="btn btn-ghost btn-sm" id="btnModelos" type="button" data-i18n="Ver los modelos de mi clave">Ver los modelos de mi clave</button></div>
+  <p class="help" id="iaEstado" data-i18n="f.ia.ayuda">La clave se guarda solo en este navegador y se envía únicamente a tu proveedor. Cada persona usa la suya y paga su propio uso. Elige un modelo económico: este uso no necesita el más potente.</p></div></div></div>
+
+<div class="modal" id="mEnvio" role="dialog" aria-modal="true" aria-labelledby="mEnT"><div class="modal-box"><div class="modal-head"><h2 id="mEnT" data-i18n="Esto es lo que saldría hacia tu proveedor de IA">Esto es lo que saldría hacia tu proveedor de IA</h2><button type="button" data-close data-i18n="Cerrar">Cerrar</button></div><div class="modal-body"><div id="envioInfo"></div><pre class="fa-pre" id="envioTxt"></pre><label class="fa-chk" style="margin:12px 0"><input type="checkbox" id="envioOk"> <span data-i18n="f.envio.chk">He revisado la muestra y confirmo que puede salir de mi ordenador.</span></label><div class="actions"><button class="btn btn-primary" id="envioSi" type="button" disabled data-i18n="s.enviar.ok">Enviar</button><button class="btn btn-ghost" id="envioNo" type="button" data-i18n="Cancelar">Cancelar</button></div></div></div></div>
+
+<div class="modal" id="mHelp" role="dialog" aria-modal="true" aria-labelledby="mHelpT"><div class="modal-box"><div class="modal-head"><h2 id="mHelpT" data-i18n="Ayuda">Ayuda</h2><button type="button" data-close data-i18n="Cerrar">Cerrar</button></div><div class="modal-body"><div class="glos" id="glos"></div><p class="help" id="fuentesTxt"></p></div></div></div>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>

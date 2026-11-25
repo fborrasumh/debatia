@@ -1,0 +1,73 @@
+{
+  "slug": "debatia",
+  "name": "DebatIA",
+  "tagline": "Entrenador de oratoria con debates al estilo Munk",
+  "description": "Debate en directo contra un rival IA sobre una moción, con fases y tiempos al estilo de los Munk Debates. Un panel de 100 personas sintéticas vota antes y después: gana quien más votos mueve. El código mide tu discurso y comprueba cada cita.",
+  "eyebrow": "Entrenamiento de la oratoria y el debate · Universidad Miguel Hernández de Elche",
+  "h1": "Defiende tu postura y *mueve votos* frente a un rival que no se rinde",
+  "lede": "Debates en directo contra un rival IA con las fases y los tiempos de los Munk Debates. Cien personas sintéticas votan antes y después: gana quien más opiniones consigue cambiar. El código mide tu discurso y comprueba cada cita.",
+  "logo_icon": "scale",
+  "ia": true,
+  "lang": "es",
+  "langs": [
+    "es",
+    "en",
+    "pt"
+  ],
+  "i18n": {
+    "en": {
+      "title": "DebatIA · Public speaking trainer with Munk-style debates",
+      "eyebrow": "Public speaking and debate training · Miguel Hernández University of Elche",
+      "h1": "Defend your position and *move votes* against an opponent who never gives up",
+      "lede": "Debate live against an AI opponent with the phases and timings of the Munk Debates. One hundred synthetic people vote before and after: whoever changes the most minds wins. The code measures your speech and checks every quote."
+    },
+    "pt": {
+      "title": "DebatIA · Treinador de oratória com debates ao estilo Munk",
+      "eyebrow": "Treino de oratória e debate · Universidade Miguel Hernández de Elche",
+      "h1": "Defenda a sua posição e *mova votos* frente a um rival que não desiste",
+      "lede": "Debata em direto contra um rival de IA com as fases e os tempos dos Munk Debates. Cem pessoas sintéticas votam antes e depois: ganha quem mudar mais opiniões. O código mede o seu discurso e verifica cada citação."
+    }
+  },
+  "authors": [
+    {
+      "name": "Fernando Borrás Rocher",
+      "orcid": "0000-0002-5519-4573",
+      "affiliation": "Universidad Miguel Hernández de Elche"
+    }
+  ],
+  "catalog": {
+    "cat": "doc",
+    "icon": "ti-bulb",
+    "sub_es": "Oratoria y debate al estilo Munk",
+    "desc_es": "Debate contra un rival IA con fases y tiempos Munk; 100 personas sintéticas votan antes y después y el código mide el discurso.",
+    "sub_en": "Public speaking and Munk-style debate",
+    "desc_en": "Debate an AI opponent with Munk phases and timings; 100 synthetic people vote before and after and the code measures your speech.",
+    "tit_es": "Todas las titulaciones",
+    "comp_es": "Oratoria, argumentación, refutación, pensamiento crítico",
+    "tit_en": "All degrees",
+    "comp_en": "Public speaking, argumentation, rebuttal, critical thinking"
+  },
+  "modules": [
+    "00-utils",
+    "10-persist",
+    "20-providers",
+    "30-verify",
+    "60-nav",
+    "65-i18n"
+  ],
+  "app_js": [
+    "datos.js",
+    "nucleo.js",
+    "ejemplo.js",
+    "avatar.js",
+    "app.js"
+  ],
+  "script_extra": [
+    "https://cdn.jsdelivr.net",
+    "'wasm-unsafe-eval'"
+  ],
+  "connect_extra": [
+    "'self'",
+    "blob:"
+  ]
+}

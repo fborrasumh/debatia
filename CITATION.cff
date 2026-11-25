@@ -1,0 +1,20 @@
+cff-version: 1.2.0
+message: "Si usas este software, cítalo con estos metadatos."
+title: "DebatIA"
+type: software
+authors:
+  - family-names: "Borrás Rocher"
+    given-names: "Fernando"
+    affiliation: "Universidad Miguel Hernández de Elche"
+    orcid: "https://orcid.org/0000-0002-5519-4573"
+version: "1.0.0"
+date-released: "2026-11-25"
+url: "https://fborrasumh.github.io/debatia/"
+repository-code: "https://github.com/fborrasumh/debatia"
+license: MIT
+keywords:
+  - oratoria
+  - debate
+  - argumentación
+  - público sintético
+  - inteligencia artificial
