@@ -7,8 +7,12 @@ authors:
     given-names: "Fernando"
     affiliation: "Universidad Miguel Hernández de Elche"
     orcid: "https://orcid.org/0000-0002-5519-4573"
+  - family-names: "Sanjuán Andrés"
+    given-names: "Francisco Javier"
+    affiliation: "Universidad Miguel Hernández de Elche"
+    orcid: "https://orcid.org/0000-0002-3210-9778"
 version: "1.0.0"
-date-released: "2026-11-25"
+date-released: "2026-11-26"
 url: "https://fborrasumh.github.io/debatia/"
 repository-code: "https://github.com/fborrasumh/debatia"
 license: MIT

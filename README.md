@@ -52,8 +52,8 @@ Con la propia clave de OpenAI, Google Gemini o Anthropic Claude. La clave se gua
 
 ## Autoría
 
-Fernando Borrás Rocher (Universidad Miguel Hernández de Elche). Reutiliza el avatar 3D de AnamnesIA (MPFB/MakeHuman CC0, TalkingHead MIT) y la población sintética de PanelIA.
+Fernando Borrás Rocher y Francisco Javier Sanjuán Andrés (Universidad Miguel Hernández de Elche). Reutiliza el avatar 3D de AnamnesIA (MPFB/MakeHuman CC0, TalkingHead MIT) y la población sintética de PanelIA.
 
-ORCID: Fernando Borrás Rocher [0000-0002-5519-4573](https://orcid.org/0000-0002-5519-4573)
+ORCID: Fernando Borrás Rocher [0000-0002-5519-4573](https://orcid.org/0000-0002-5519-4573) · Francisco Javier Sanjuán Andrés [0000-0002-3210-9778](https://orcid.org/0000-0002-3210-9778)
 
 Licencia MIT.
